@@ -12,7 +12,8 @@ creation.
 
 
 #Test steps
-Create the test configuration with a custom runner: `android.support.test.runner.AndroidJUnitRunner`
+   Create the test configuration with a custom runner: `android.support.test.runner.AndroidJUnitRunner`
+   
     * Open *Run* menu | *Edit Configurations*
     * Add a new *Android Tests* configuration
     * Choose a module
