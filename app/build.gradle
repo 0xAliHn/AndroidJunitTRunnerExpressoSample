@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.android.testing.androidjunitrunnersample"
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+
+        ////Needed for both AndroidJunitRunner and Expresso testing
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    // App's dependencies, including test
+    compile 'com.android.support:support-annotations:25.0.1';
+    compile 'com.google.guava:guava:18.0'
+
+    // Testing-only dependencies
+    //Needed for both AndroidJunitRunner and Expresso test
+    androidTestCompile 'com.android.support:support-annotations:25.0.1';
+    androidTestCompile 'com.android.support.test:runner:0.5';
+
+    //Needed for only AndroidJunitRunner
+    androidTestCompile 'com.android.support.test:rules:0.5';
+
+    //Needed for Expresso
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2';
+}
